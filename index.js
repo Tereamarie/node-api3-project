@@ -1,9 +1,6 @@
 // code away!
-const express = require("express");
-
-
-const server = express();
-
+const server = require("./server");
+const PORT = 4000;
 
 server.get('/', (req, res) => {
     
@@ -11,7 +8,8 @@ server.get('/', (req, res) => {
     <h2>Lambda Hubs</h2>
     <p>Welcome${nameInsert} to the Lambda</p>`)
 })
-server.listen(4000, () => {
-    console.log("\n* Server Running on http://localhost:4000 *\n");
+server.listen(PORT, () => {
+    console.log(`\n *** Server running at http://localhost:${PORT}... *** \n`);
   });
   
+  module.exports = server;
